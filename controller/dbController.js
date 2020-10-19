@@ -40,6 +40,7 @@ function validator(body, model) {
     if (model.includes(key)) {
       result[key] = body[key]
       counter++
+      console.log(counter)
     }
   }
   if (counter < modelCounter) {
@@ -74,7 +75,7 @@ function get(tableName, id) {
  */
 function add(tableName, body) {
   let parsedBody
-  if (tableName == 'stores') {
+  if (tableName == 'petugas') {
     parsedBody = validator(body, storesModel)
   }
   if (tableName == 'goods') {
