@@ -1,9 +1,7 @@
 module.exports = [
     'id',
+    'storeId',
     'name',
-    'address',
-    'phoneNumber',
-    'email',
-    'website',
-    'ownerName'
+    'stock',
+    'label'
 ]
