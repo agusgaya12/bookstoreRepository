@@ -25,7 +25,8 @@ let db;
       // 👇 table names
       store: [],
       storage: [],
-      book: []
+      book: [],
+      transaction: []
     })
       .write()
   } catch (error) {
