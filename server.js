@@ -7,6 +7,8 @@ const addStorage = require('./routes/storage/addStorages')
 const getStorage = require('./routes/storage/getStorage')
 const addStores = require('./routes/stores/addStores')
 const getStores = require('./routes/stores/getStores')
+const addTransaction = require('./routes/transaction/addTransaction')
+const getTransaction = require('./routes/transaction/getTransaction')
 
 const app = express()
 app.use(bodyParser.json())
@@ -18,6 +20,8 @@ app.use(getStores)
 app.use(addStores)
 app.use(addStorage)
 app.use(getStorage)
+app.use(addTransaction)
+app.use(getTransaction)
 
 const port = 3000
 app.listen(port, () => {

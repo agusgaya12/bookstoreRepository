@@ -3,6 +3,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const storesModel = require('../model/storesmodel')
 const bookModel = require('../model/booksmodel')
 const storageModel = require('../model/storageModel')
+const transactionModel = require('../model/transactionModel')
 
 // ⚠️ propietary code, don't change it ⚠️
 // this code will create db.json automatically if your folder doesn't have one
@@ -83,6 +84,9 @@ function add(tableName, body) {
   }
   if (tableName == 'book') {
     parsedBody = validator(body, bookModel)
+  }
+  if (tableName == 'transaction') {
+    parsedBody = validator(body, transactionModel)
   }
   if (!parsedBody) {
     return false
