@@ -2,9 +2,9 @@ const express = require('express')
 const app = express.Router()
 const db = require('../../controller/dbController')
 
-app.post('/book', (req, res) => {
+app.post('/storage', (req, res) => {
     const body = req.body
-    const result = db.add('book', body)
+    const result = db.add('storage', body)
     res.send(result)
     return
 })

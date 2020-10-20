@@ -1,8 +1,8 @@
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const storesModel = require('../model/storesModel')
-const goodsModel = require('../model/goodsModel')
-const inventoriesModel = require('../model/inventoriesModel')
+const storesModel = require('../model/storesmodel')
+const bookModel = require('../model/booksmodel')
+const storageModel = require('../model/storageModel')
 
 // ⚠️ propietary code, don't change it ⚠️
 // this code will create db.json automatically if your folder doesn't have one
@@ -22,9 +22,9 @@ let db;
     db = low(adapter)
     db.defaults({
       // 👇 table names
-      stores: [],
-      inventories: [],
-      goods: []
+      store: [],
+      storage: [],
+      book: []
     })
       .write()
   } catch (error) {
@@ -75,14 +75,14 @@ function get(tableName, id) {
  */
 function add(tableName, body) {
   let parsedBody
-  if (tableName == 'petugas') {
+  if (tableName == 'stores') {
     parsedBody = validator(body, storesModel)
   }
-  if (tableName == 'goods') {
-    parsedBody = validator(body, goodsModel)
+  if (tableName == 'storage') {
+    parsedBody = validator(body, storageModel)
   }
-  if (tableName == 'inventories') {
-    parsedBody = validator(body, inventoriesModel)
+  if (tableName == 'book') {
+    parsedBody = validator(body, bookModel)
   }
   if (!parsedBody) {
     return false

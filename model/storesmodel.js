@@ -2,8 +2,6 @@ module.exports = [
     'id',
     'name',
     'address',
-    'phoneNumber',
-    'email',
-    'website',
-    'ownerName'
+    'phone',
+    'owner'
 ]
