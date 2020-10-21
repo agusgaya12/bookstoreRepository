@@ -10,8 +10,6 @@ const getStores = require('./routes/stores/getStores')
 const addTransaction = require('./routes/transaction/addTransaction')
 const getTransaction = require('./routes/transaction/getTransaction')
 
-
-
 const app = express()
 app.use(bodyParser.json())
 
